@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "core-database": "^1.0.0",
     "express": "^5.2.1"
   },
   "scripts": {
