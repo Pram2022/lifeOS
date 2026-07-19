@@ -1,22 +1,18 @@
 {
-  "name": "api",
+  "name": "module-tasks",
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {},
   "dependencies": {
     "core-database": "^1.0.0",
     "express": "^5.2.1",
-    "module-tasks": "^1.0.0"
-  },
-  "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.1",
-    "tsx": "^4.23.1",
-    "typescript": "^7.0.2"
+    "typescript": "^6.0.3"
   }
 }
