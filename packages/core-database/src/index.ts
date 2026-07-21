@@ -1,4 +1,5 @@
-import { PrismaClient } from '../generated/prisma/client.ts';
+import { PrismaClient, Priority } from '@prisma/client';
+
 import { PrismaPg } from '@prisma/adapter-pg';
 import { config } from 'dotenv';
 import { fileURLToPath } from 'node:url';
@@ -20,4 +21,4 @@ const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
 // export naturally behaves as a singleton — every importer gets the same
 // instance and connection pool, no matter how many files import it.
 export const prisma = new PrismaClient({ adapter });
-export { Priority } from '../generated/prisma/client.ts';
+export { Priority };

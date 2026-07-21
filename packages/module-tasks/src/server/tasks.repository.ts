@@ -1,5 +1,5 @@
 import { prisma } from 'core-database';
-import type { CreateTaskRequest } from '../shared/tasks.schema.ts';
+import type { CreateTaskRequest } from '../shared/tasks.schema.js';
 
 export async function findAllTasks() {
   return prisma.task.findMany({

@@ -4,11 +4,13 @@
   "private": true,
   "type": "module",
   "exports": {
-  "./server": "./src/server/index.ts",
-  "./web": "./src/web/index.ts"
-},
+  "./server": "./dist/server/index.js",
+  "./web": "./dist/web/index.js"
+  },
+  "scripts": {
+  "build": "tsc"
+  },
 
-  "scripts": {},
   "dependencies": {
     "core-database": "^1.0.0",
     "express": "^5.2.1",

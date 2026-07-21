@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { listTasks, addTask } from './tasks.service.ts';
-import { createTaskSchema } from '../shared/tasks.schema.ts';
+import { listTasks, addTask } from './tasks.service.js';
+import { createTaskSchema } from '../shared/tasks.schema.js';
 
 export const tasksRouter = Router();
 

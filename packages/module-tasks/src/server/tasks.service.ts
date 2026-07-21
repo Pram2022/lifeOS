@@ -1,4 +1,4 @@
-import { createTask, findAllTasks } from './tasks.repository.ts';
+import { createTask, findAllTasks } from './tasks.repository.js';
 import type { Priority } from 'core-database';
 import type { CreateTaskRequest } from '../shared/tasks.schema.ts';
 

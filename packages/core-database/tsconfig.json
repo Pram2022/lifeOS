@@ -1,10 +1,7 @@
 {
   "compilerOptions": {
-    // No rootDir/outDir: this package's generated Prisma client lives
-    // outside src/, and there's no real build for this package yet
-    // (noEmit below) — nothing to enforce a clean output layout against.
-    "noEmit": true,
-    "allowImportingTsExtensions": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "target": "esnext",
@@ -16,7 +13,9 @@
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "declaration": true,
+    "noEmitOnError": true
   },
   "include": ["src/**/*"]
 }
