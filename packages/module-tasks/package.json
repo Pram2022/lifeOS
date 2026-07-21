@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "main": "./src/index.ts",
+  "exports": {
+  "./server": "./src/server/index.ts",
+  "./web": "./src/web/index.ts"
+},
+
   "scripts": {},
   "dependencies": {
     "core-database": "^1.0.0",
