@@ -1,7 +1,12 @@
-import { createTask, findAllTasks } from './tasks.repository.js';
+import {
+  createTask,
+  findAllTasks,
+  findTaskById,
+  updateTask,
+    deleteTask,
+} from './tasks.repository.js';
 import type { Priority } from 'core-database';
-import type { CreateTaskRequest } from '../shared/tasks.schema.ts';
-
+import type { CreateTaskRequest, UpdateTaskRequest } from '../shared/tasks.schema.js';
 
 // The service layer holds business logic that goes beyond simple data
 // access. There isn't any real business logic for Tasks yet — these
@@ -16,4 +21,25 @@ export async function listTasks() {
 
 export async function addTask(input: CreateTaskRequest) {
   return createTask(input);
+}
+export class TaskNotFoundError extends Error {
+  constructor(id: number) {
+    super(`Task ${id} not found`);
+    this.name = 'TaskNotFoundError';
+  }
+}
+
+export async function updateTaskById(id: number, input: UpdateTaskRequest) {
+  const existing = await findTaskById(id);
+  if (!existing) {
+    throw new TaskNotFoundError(id);
+  }
+  return updateTask(id, input);
+}
+export async function deleteTaskById(id: number) {
+  const existing = await findTaskById(id);
+  if (!existing) {
+    throw new TaskNotFoundError(id);
+  }
+  return deleteTask(id);
 }

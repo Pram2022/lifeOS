@@ -5,6 +5,7 @@
   "type": "module",
   "dependencies": {
     "core-database": "^1.0.0",
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "module-tasks": "^1.0.0"
   },
@@ -14,6 +15,7 @@
     "start": "node dist/server.js"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.1",
     "tsx": "^4.23.1",

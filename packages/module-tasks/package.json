@@ -4,21 +4,22 @@
   "private": true,
   "type": "module",
   "exports": {
-  "./server": "./dist/server/index.js",
-  "./web": "./dist/web/index.js"
+    "./server": "./dist/server/index.js",
+    "./web": "./dist/web/index.js"
   },
   "scripts": {
-  "build": "tsc"
+    "build": "tsc"
   },
-
   "dependencies": {
     "core-database": "^1.0.0",
     "express": "^5.2.1",
+    "react": "^19.2.4",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
     "typescript": "^6.0.3"
   }
 }
