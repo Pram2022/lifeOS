@@ -19,8 +19,23 @@ export const updateTaskSchema = z.object({
   dueDate: z.coerce.date().nullable().optional(),
   priority: z.enum(['LOW', 'MEDIUM', 'HIGH']).nullable().optional(),
 });
+// The shape of a Task as returned by the API — the frontend's view of the
+// resource. Defined independently of the Prisma model (which the frontend
+// must never depend on directly), even though the shapes currently match.
+export type Task = {
+  id: number;
+  title: string;
+  completed: boolean;
+  dueDate: string | null;
+  priority: 'LOW' | 'MEDIUM' | 'HIGH' | null;
+  createdAt: string;
+  updatedAt: string;
+};
+
 
 export type UpdateTaskRequest = z.infer<typeof updateTaskSchema>;
 
 
 export type CreateTaskRequest = z.infer<typeof createTaskSchema>;
+export type Priority = 'LOW' | 'MEDIUM' | 'HIGH';
+
