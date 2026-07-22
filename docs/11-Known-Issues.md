@@ -235,14 +235,6 @@ As more modules are added, reusable UI components should be extracted into a sha
 
 ---
 
-## Error Handling
-
-**Priority:** Medium
-
-Global error handling should be standardized across the application to provide consistent error responses.
-
----
-
 ## API Configuration
 
 **Priority:** Medium

@@ -50,13 +50,15 @@ Additional modules will introduce their own tables as the application grows.
 
 The **Task** table stores user tasks.
 
-| Column    | Type     | Nullable | Description       |
-| --------- | -------- | -------- | ----------------- |
-| id        | Integer  | No       | Primary key       |
-| title     | String   | No       | Task title        |
-| completed | Boolean  | No       | Completion status |
-| dueDate   | DateTime | Yes      | Optional due date |
-| priority  | Enum     | Yes      | Task priority     |
+| Column    | Type     | Nullable | Description                |
+| --------- | -------- | -------- | --------------------------- |
+| id        | Integer  | No       | Primary key                |
+| title     | String   | No       | Task title                 |
+| completed | Boolean  | No       | Completion status           |
+| dueDate   | DateTime | Yes      | Optional due date           |
+| priority  | Enum     | Yes      | Task priority                |
+| createdAt | DateTime | No       | Set automatically on create |
+| updatedAt | DateTime | No       | Set automatically on update |
 
 ---
 
@@ -70,6 +72,8 @@ title : String
 completed : Boolean
 dueDate : DateTime?
 priority : Priority?
+createdAt : DateTime
+updatedAt : DateTime
 ```
 
 ---
@@ -101,6 +105,8 @@ Current database model:
 | completed                 |
 | dueDate                   |
 | priority                  |
+| createdAt                 |
+| updatedAt                 |
 +---------------------------+
 ```
 
@@ -125,6 +131,8 @@ model Task {
   completed Boolean   @default(false)
   dueDate   DateTime?
   priority  Priority?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }
 ```
 
